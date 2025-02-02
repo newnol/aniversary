@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Chúng ta gặp nhau lần đầu ở đâu?",
+      "options": ["Quán cafe", "Công viên", "Trường học", "Nhà hàng"],
+      "correct": 0
+    },
+    {
+      "id": 2,
+      "question": "Ngày chúng ta gặp nhau lần đầu là ngày nào?",
+      "options": ["01/06/2022", "02/06/2022", "03/06/2022", "04/06/2022"],
+      "correct": 2
+    },
+    {
+      "id": 3,
+      "question": "Món ăn yêu thích của đối phương là gì?",
+      "options": ["Phở", "Pizza", "Sushi", "Bún bò"],
+      "correct": 2
+    },
+    {
+      "id": 4,
+      "question": "Ngày tỏ tình của chúng ta là ngày nào?",
+      "options": ["13/02/2023", "14/02/2023", "15/02/2023", "16/02/2023"],
+      "correct": 1
+    },
+    {
+      "id": 5,
+      "question": "Màu sắc yêu thích của đối phương là gì?",
+      "options": ["Xanh dương", "Hồng", "Tím", "Đen"],
+      "correct": 2
+    },
+    {
+      "id": 6,
+      "question": "Bộ phim đầu tiên chúng ta xem cùng nhau là gì?",
+      "options": ["Titanic", "La La Land", "Your Name", "Inception"],
+      "correct": 2
+    },
+    {
+      "id": 7,
+      "question": "Món quà đầu tiên đối phương tặng bạn là gì?",
+      "options": ["Hoa", "Chocolate", "Gấu bông", "Sách"],
+      "correct": 2
+    },
+    {
+      "id": 8,
+      "question": "Chúng ta đã đi đâu trong buổi hẹn đầu tiên?",
+      "options": ["Rạp phim", "Công viên", "Quán cafe", "Nhà hàng"],
+      "correct": 2
+    }
+  ]
+}
