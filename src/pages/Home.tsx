@@ -49,7 +49,7 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <HighlightCard
             title="Ngày đầu tiên gặp nhau"
-            description="Khoảnh khắc định mệnh"
+            description="Khoảnh khắc đầu tiên của chúng ta"
             date="03/06/2022"
           />
           <HighlightCard
@@ -59,8 +59,8 @@ const Home = () => {
           />
           <HighlightCard
             title="Khoảnh khắc đặc biệt"
-            description="Chuyến du lịch đầu tiên cùng nhau"
-            date="15/03/2023"
+            description="Ngày đầu tiên kiếm được bus"
+            date="8/03/2023"
           />
         </div>
       </motion.div>
