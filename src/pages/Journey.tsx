@@ -10,18 +10,18 @@ const locations = [
     id: 1,
     name: 'Nơi gặp nhau đầu tiên',
     date: '03/06/2022',
-    description: 'Quán cafe nơi chúng ta lần đầu gặp gỡ',
-    latitude: 10.8231,
-    longitude: 106.6297,
-    image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800'
+    description: 'Hôm này là gặp nhau ở trường nè',
+    latitude: 10.804936,
+    longitude: 106.718568,
+    image: 'https://laodongthudo.vn/stores/news_dataimages/2023/082023/21/15/thpt-gia-dinh-2-1688876310130105184283420230821154553.jpg?rt=20230821154554'
   },
   {
     id: 2,
     name: 'Nơi tỏ tình',
     date: '14/02/2023',
-    description: 'Khoảnh khắc đáng nhớ khi nói lời yêu đầu tiên',
-    latitude: 10.8000,
-    longitude: 106.6500,
+    description: 'Khoảng khắc tui dậy sớm để chuẩn bị',
+    latitude: 10.868957,
+    longitude: 106.814861,
     image: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800'
   }
 ];

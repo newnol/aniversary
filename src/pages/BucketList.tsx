@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, Circle, Plus, Trash2 } from 'lucide-react';
+import { CheckCircle2, Circle, Plus, Trash2, Edit } from 'lucide-react'; // added Edit
 
 const BucketList = () => {
   const [items, setItems] = useState([
@@ -11,6 +11,8 @@ const BucketList = () => {
     { id: 5, task: 'Mở một quán cafe nhỏ', completed: false }
   ]);
   const [newTask, setNewTask] = useState('');
+  const [editingId, setEditingId] = useState<number | null>(null); // new state for editing
+  const [editingValue, setEditingValue] = useState('');         // new state for editing value
 
   const handleAdd = (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,6 +33,25 @@ const BucketList = () => {
 
   const removeItem = (id: number) => {
     setItems(items.filter(item => item.id !== id));
+  };
+
+  // new functions for editing
+  const startEditing = (id: number, currentTask: string) => {
+    setEditingId(id);
+    setEditingValue(currentTask);
+  };
+
+  const updateItem = (id: number) => {
+    setItems(items.map(item =>
+      item.id === id ? { ...item, task: editingValue } : item
+    ));
+    setEditingId(null);
+    setEditingValue('');
+  };
+
+  const cancelEditing = () => {
+    setEditingId(null);
+    setEditingValue('');
   };
 
   return (
@@ -81,16 +102,51 @@ const BucketList = () => {
                     <Circle />
                   )}
                 </button>
-                <span className={item.completed ? 'line-through text-gray-500' : ''}>
-                  {item.task}
-                </span>
+                {/* Conditionally render task text or input */}
+                {editingId === item.id ? (
+                  <input
+                    type="text"
+                    value={editingValue}
+                    onChange={(e) => setEditingValue(e.target.value)}
+                    className="flex-1 p-2 border-b border-gray-300 focus:outline-none"
+                  />
+                ) : (
+                  <span className={item.completed ? 'line-through text-gray-500' : ''}>
+                    {item.task}
+                  </span>
+                )}
               </div>
-              <button
-                onClick={() => removeItem(item.id)}
-                className="opacity-0 group-hover:opacity-100 text-gray-400 hover:text-red-500 transition-all"
-              >
-                <Trash2 size={18} />
-              </button>
+              <div className="flex items-center gap-2">
+                {editingId === item.id ? (
+                  <>
+                    <button
+                      onClick={() => updateItem(item.id)}
+                      className="text-green-500 hover:text-green-600"
+                    >
+                      Save
+                    </button>
+                    <button
+                      onClick={cancelEditing}
+                      className="text-gray-500 hover:text-gray-600"
+                    >
+                      Cancel
+                    </button>
+                  </>
+                ) : (
+                  <button
+                    onClick={() => startEditing(item.id, item.task)}
+                    className="text-gray-400 hover:text-blue-500 transition-colors"
+                  >
+                    <Edit size={18} />
+                  </button>
+                )}
+                <button
+                  onClick={() => removeItem(item.id)}
+                  className="opacity-0 group-hover:opacity-100 text-gray-400 hover:text-red-500 transition-all"
+                >
+                  <Trash2 size={18} />
+                </button>
+              </div>
             </motion.div>
           ))}
         </div>

@@ -21,12 +21,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/timeline" element={<Timeline />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/messages" element={<Messages />} />
+            {/* <Route path="/messages" element={<Messages />} /> */}
             <Route path="/memories" element={<Memories />} />
             <Route path="/journey" element={<Journey />} />
-            <Route path="/bucket-list" element={<BucketList />} />
+            {/* <Route path="/bucket-list" element={<BucketList />} /> */}
             <Route path="/quiz" element={<Quiz />} />
-            <Route path="/time-capsule" element={<TimeCapsule />} />
+            {/* <Route path="/time-capsule" element={<TimeCapsule />} /> */}
           </Routes>
         </main>
       </div>

@@ -18,13 +18,13 @@ const Home = () => {
       >
         <div className="relative h-[60vh] rounded-lg overflow-hidden mb-8">
           <img
-            src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1920"
+            src="https://drive.google.com/file/d/1rBCotea2sKgtD5AgoeQ58TtF5L7ZpVqG/view?usp=sharing"
             alt="Love Story Cover"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-8">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Chào mừng đến với hành trình yêu thương của chúng ta!
+              Chào mừng đến với hành trình của Nắng và Thúi!
             </h1>
           </div>
         </div>
@@ -42,7 +42,7 @@ const Home = () => {
             {daysCount} ngày
           </div>
           <p className="text-gray-600 mt-4">
-            Mỗi ngày bên nhau là một ngày tràn ngập hạnh phúc và yêu thương
+            Mỗi ngày bên nhau là một kỉ niệm
           </p>
         </motion.div>
 
@@ -59,7 +59,7 @@ const Home = () => {
           />
           <HighlightCard
             title="Khoảnh khắc đặc biệt"
-            description="Ngày đầu tiên kiếm được bus"
+            description="Ngày đầu tiên kiếm được Bus"
             date="8/03/2023"
           />
         </div>
