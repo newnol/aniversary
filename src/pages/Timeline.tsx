@@ -20,7 +20,7 @@ const timelineEvents = [
     date: '23/04/2023',
     title: 'Bánh mì hình thù',
     description: 'Ngày này là tui đang bị cách ly ở nhà và Nghi chạy mua cho tui bánh mì bạch tuột này',
-    image: 'https://photos.onedrive.com/share/5CF1919069154895!s2020878c794b4a88bfbc0e257900fb2c?cid=5CF1919069154895&resId=5CF1919069154895!s2020878c794b4a88bfbc0e257900fb2c&ithint=photo&e=vLxw2m&migratedtospo=true&redeem=aHR0cHM6Ly8xZHJ2Lm1zL2kvYy81Y2YxOTE5MDY5MTU0ODk1L0VZeUhJQ0JMZVloS3Y3d09KWGtBLXl3QlYtaXpob3l3NEdLd2Ztbm1tQ01YS1E_ZT12THh3Mm0'
+    image: 'https://onedrive.live.com/download?cid=5CF1919069154895&resid=5CF1919069154895!s2020878c794b4a88bfbc0e257900fb2c' // direct OneDrive download link
   },
   {
     date: '08/03/2024',
@@ -32,7 +32,7 @@ const timelineEvents = [
     date: '16/7/2024',
     title: 'Ngày chữa lành',
     description: 'Ngày này mình đi chữa lành nè',
-    image: 'https://drive.google.com/file/d/1vSkx1tjj3emOIo1z43zpIyNl__inJ25v/view?usp=sharing'
+    image: 'https://drive.google.com/uc?export=view&id=1vSkx1tjj3emOIo1z43zpIyNl__inJ25v' // updated drive link
   },
   {
     date: '21/1/2025',

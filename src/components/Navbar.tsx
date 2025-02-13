@@ -37,11 +37,8 @@ const Navbar = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <NavLink to="/timeline" icon={<Clock className="h-4 w-4" />} text="Timeline" onClick={toggleMenu} />
             <NavLink to="/gallery" icon={<Image className="h-4 w-4" />} text="Gallery" onClick={toggleMenu} />
-            <NavLink to="/messages" icon={<MessageHeart className="h-4 w-4" />} text="Messages" onClick={toggleMenu} />
             <NavLink to="/journey" icon={<Map className="h-4 w-4" />} text="Journey" onClick={toggleMenu} />
-            <NavLink to="/bucket-list" icon={<ListTodo className="h-4 w-4" />} text="Bucket List" onClick={toggleMenu} />
             <NavLink to="/quiz" icon={<BrainCircuit className="h-4 w-4" />} text="Quiz" onClick={toggleMenu} />
-            <NavLink to="/time-capsule" icon={<Timer className="h-4 w-4" />} text="Time Capsule" onClick={toggleMenu} />
           </div>
         </div>
       </div>

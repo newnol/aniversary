@@ -4,12 +4,9 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Timeline from './pages/Timeline';
 import Gallery from './pages/Gallery';
-import Messages from './pages/Messages';
-import Memories from './pages/Memories';
 import Journey from './pages/Journey';
 import BucketList from './pages/BucketList';
 import Quiz from './pages/Quiz';
-import TimeCapsule from './pages/TimeCapsule';
 
 function App() {
   return (
@@ -22,7 +19,6 @@ function App() {
             <Route path="/timeline" element={<Timeline />} />
             <Route path="/gallery" element={<Gallery />} />
             {/* <Route path="/messages" element={<Messages />} /> */}
-            <Route path="/memories" element={<Memories />} />
             <Route path="/journey" element={<Journey />} />
             {/* <Route path="/bucket-list" element={<BucketList />} /> */}
             <Route path="/quiz" element={<Quiz />} />
