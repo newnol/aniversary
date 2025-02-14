@@ -18,7 +18,7 @@ const Home = () => {
       >
         <div className="relative h-[60vh] rounded-lg overflow-hidden mb-8">
           <img
-            src="https://drive.google.com/uc?export=view&id=1rBCotea2sKgtD5AgoeQ58TtF5L7ZpVqG"
+            src="https://res.cloudinary.com/drvpldkxq/image/upload/v1739498524/IMG_1736177640167_1736178400402_bt5zeq.jpg"
             alt="Love Story Cover"
             className="w-full h-full object-cover"
           />
