@@ -6,9 +6,11 @@ import Timeline from './pages/Timeline';
 import Gallery from './pages/Gallery';
 import Journey from './pages/Journey';
 import Quiz from './pages/Quiz';
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
+    
     <BrowserRouter>
       <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50">
         <Navbar />
@@ -24,8 +26,10 @@ function App() {
             {/* <Route path="/time-capsule" element={<TimeCapsule />} /> */}
           </Routes>
         </main>
+        <Analytics />
       </div>
     </BrowserRouter>
+    
   );
 }
 
