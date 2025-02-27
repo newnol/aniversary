@@ -23,7 +23,7 @@ const Home = () => {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 opacity-70">
               Chào mừng đến với hành trình của Nắng và Thúi!
             </h1>
           </div>
@@ -49,7 +49,7 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <HighlightCard
             title="Ngày đầu tiên gặp nhau"
-            description="Khoảnh khắc đầu tiên của chúng ta"
+            description="Khoảnh khắc lần đầu tiên"
             date="03/06/2022"
           />
           <HighlightCard
@@ -60,7 +60,7 @@ const Home = () => {
           <HighlightCard
             title="Khoảnh khắc đặc biệt"
             description="Ngày đầu tiên kiếm được Bus"
-            date="8/03/2023"
+            date="15/03/2023"
           />
         </div>
       </motion.div>

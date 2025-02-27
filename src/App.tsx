@@ -5,7 +5,6 @@ import Home from './pages/Home';
 import Timeline from './pages/Timeline';
 import Gallery from './pages/Gallery';
 import Journey from './pages/Journey';
-import BucketList from './pages/BucketList';
 import Quiz from './pages/Quiz';
 
 function App() {
