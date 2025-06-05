@@ -10,7 +10,6 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
-  const [selectedAnswers, setSelectedAnswers] = useState<number[]>([]);
 
   useEffect(() => {
     // Randomly select questions
@@ -21,15 +20,13 @@ const Quiz = () => {
   }, []);
 
   const handleAnswer = (optionIndex: number) => {
-    const newSelectedAnswers = [...selectedAnswers, optionIndex];
-    setSelectedAnswers(newSelectedAnswers);
 
     if (optionIndex === questions[currentQuestion].correct) {
-      setScore(score + 1);
+      setScore(prev => prev + 1);
     }
 
     if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
+      setCurrentQuestion(prev => prev + 1);
     } else {
       setShowResult(true);
     }
@@ -44,7 +41,6 @@ const Quiz = () => {
     setCurrentQuestion(0);
     setScore(0);
     setShowResult(false);
-    setSelectedAnswers([]);
   };
 
   const getResultMessage = () => {
@@ -120,4 +116,4 @@ const Quiz = () => {
   );
 };
 
-export default Quiz
+export default Quiz;

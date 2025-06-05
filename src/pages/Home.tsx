@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import dayjs from 'dayjs';
 
 const FIRST_DATE = '2022-06-03'; // First meeting
-const CONFESSION_DATE = '2023-02-14'; // First confession
 
 const Home = () => {
   const daysCount = dayjs().diff(FIRST_DATE, 'day');
