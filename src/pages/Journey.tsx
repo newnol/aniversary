@@ -3,7 +3,7 @@ import Map, { Marker, Popup } from 'react-map-gl';
 import { MapPin } from 'lucide-react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-const MAPBOX_TOKEN = 'pk.eyJ1IjoibmV3bm9sIiwiYSI6ImNtNm4wbGlscDBjbzAydG83MW5sNWtxNjkifQ.x1vPOiLU8AY3er2JBk-xqQ';
+const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
 
 const locations = [
   {
