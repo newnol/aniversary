@@ -1,11 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import dayjs from 'dayjs';
+import Confetti from 'react-confetti';
 
 const FIRST_DATE = '2022-06-03'; // First meeting
 
 const Home = () => {
   const daysCount = dayjs().diff(FIRST_DATE, 'day');
+  const yearsCount = dayjs().diff(FIRST_DATE, 'year');
+  const showAnniversary = yearsCount >= 3;
 
   return (
     <div className="max-w-4xl mx-auto text-center">
@@ -27,6 +30,21 @@ const Home = () => {
             </h1>
           </div>
         </div>
+
+        {showAnniversary && (
+          <>
+            <Confetti numberOfPieces={200} recycle={false} />
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              className="bg-pink-50 rounded-lg shadow-xl p-6 mb-8"
+            >
+              <h2 className="text-3xl font-bold text-pink-600 mb-2">Kỷ niệm 3 năm quen nhau!</h2>
+              <p className="text-gray-700">Cảm ơn em đã đồng hành cùng anh suốt 3 năm qua.</p>
+            </motion.div>
+          </>
+        )}
 
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
@@ -60,6 +78,11 @@ const Home = () => {
             title="Khoảnh khắc đặc biệt"
             description="Ngày đầu tiên kiếm được Bus"
             date="15/03/2023"
+          />
+          <HighlightCard
+            title="Kỷ niệm 3 năm"
+            description="Tròn 3 năm yêu nhau rồi nè!"
+            date="03/06/2025"
           />
         </div>
       </motion.div>
