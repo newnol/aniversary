@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Heart, Clock, Image, MessageCircleHeart as MessageHeart, Map, ListTodo, BrainCircuit, Timer, Menu, X } from 'lucide-react';
+import { Heart, Clock, Image, Map, BrainCircuit, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
