@@ -31,7 +31,9 @@ const Journey = () => {
     latitude: 10.8231,
     zoom: 11
   });
-  const [mapLib, setMapLib] = useState<any>(null);
+  const [mapLib, setMapLib] = useState<null | typeof import('react-map-gl')>(
+    null
+  );
 
   useEffect(() => {
     let mounted = true;
