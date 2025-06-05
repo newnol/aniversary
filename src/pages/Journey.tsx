@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import Map, { Marker, Popup } from 'react-map-gl';
+import React, { useState, useEffect } from 'react';
 import { MapPin } from 'lucide-react';
-import 'mapbox-gl/dist/mapbox-gl.css';
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoibmV3bm9sIiwiYSI6ImNtNm4wbGlscDBjbzAydG83MW5sNWtxNjkifQ.x1vPOiLU8AY3er2JBk-xqQ';
 
@@ -33,6 +31,18 @@ const Journey = () => {
     latitude: 10.8231,
     zoom: 11
   });
+  const [mapLib, setMapLib] = useState<any>(null);
+
+  useEffect(() => {
+    let mounted = true;
+    import('react-map-gl').then(mod => {
+      import('mapbox-gl/dist/mapbox-gl.css');
+      if (mounted) setMapLib(mod);
+    });
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   return (
     <div className="max-w-6xl mx-auto">
@@ -41,51 +51,55 @@ const Journey = () => {
       </h1>
       <div className="bg-white rounded-lg shadow-lg p-4">
         <div className="h-[600px] relative">
-          <Map
-            {...viewState}
-            onMove={evt => setViewState(evt.viewState)}
-            style={{ width: '100%', height: '100%', borderRadius: '0.5rem' }}
-            mapStyle="mapbox://styles/mapbox/streets-v11"
-            mapboxAccessToken={MAPBOX_TOKEN}
-          >
-            {locations.map(location => (
-              <Marker
-                key={location.id}
-                longitude={location.longitude}
-                latitude={location.latitude}
-                anchor="bottom"
-                onClick={e => {
-                  e.originalEvent.stopPropagation();
-                  setSelectedLocation(location);
-                }}
-              >
-                <MapPin className="w-8 h-8 text-pink-500 cursor-pointer hover:text-pink-600 transition-colors" />
-              </Marker>
-            ))}
+          {mapLib ? (
+            <mapLib.default
+              {...viewState}
+              onMove={evt => setViewState(evt.viewState)}
+              style={{ width: '100%', height: '100%', borderRadius: '0.5rem' }}
+              mapStyle="mapbox://styles/mapbox/streets-v11"
+              mapboxAccessToken={MAPBOX_TOKEN}
+            >
+              {locations.map(location => (
+                <mapLib.Marker
+                  key={location.id}
+                  longitude={location.longitude}
+                  latitude={location.latitude}
+                  anchor="bottom"
+                  onClick={e => {
+                    e.originalEvent.stopPropagation();
+                    setSelectedLocation(location);
+                  }}
+                >
+                  <MapPin className="w-8 h-8 text-pink-500 cursor-pointer hover:text-pink-600 transition-colors" />
+                </mapLib.Marker>
+              ))}
 
-            {selectedLocation && (
-              <Popup
-                longitude={selectedLocation.longitude}
-                latitude={selectedLocation.latitude}
-                anchor="bottom"
-                onClose={() => setSelectedLocation(null)}
-                closeButton={true}
-                closeOnClick={false}
-                className="max-w-sm"
-              >
-                <div className="p-2">
-                  <img
-                    src={selectedLocation.image}
-                    alt={selectedLocation.name}
-                    className="w-full h-32 object-cover rounded-lg mb-2"
-                  />
-                  <h3 className="text-lg font-semibold">{selectedLocation.name}</h3>
-                  <p className="text-sm text-gray-500 mb-1">{selectedLocation.date}</p>
-                  <p className="text-sm">{selectedLocation.description}</p>
-                </div>
-              </Popup>
-            )}
-          </Map>
+              {selectedLocation && (
+                <mapLib.Popup
+                  longitude={selectedLocation.longitude}
+                  latitude={selectedLocation.latitude}
+                  anchor="bottom"
+                  onClose={() => setSelectedLocation(null)}
+                  closeButton={true}
+                  closeOnClick={false}
+                  className="max-w-sm"
+                >
+                  <div className="p-2">
+                    <img
+                      src={selectedLocation.image}
+                      alt={selectedLocation.name}
+                      className="w-full h-32 object-cover rounded-lg mb-2"
+                    />
+                    <h3 className="text-lg font-semibold">{selectedLocation.name}</h3>
+                    <p className="text-sm text-gray-500 mb-1">{selectedLocation.date}</p>
+                    <p className="text-sm">{selectedLocation.description}</p>
+                  </div>
+                </mapLib.Popup>
+              )}
+            </mapLib.default>
+          ) : (
+            <div className="flex items-center justify-center h-full">Loading map...</div>
+          )}
         </div>
       </div>
 
