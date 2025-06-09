@@ -8,7 +8,7 @@ VITE_MAPBOX_TOKEN=your_mapbox_token
 
 The `.env` file is ignored by git and allows `src/pages/Journey.tsx` to read the token using `import.meta.env.VITE_MAPBOX_TOKEN`.
 
-A small React + Vite application built to celebrate the journey of a couple. It showcases a timeline, gallery and interactive quiz using Tailwind CSS for styling.
+A small React + Vite application built to celebrate the journey of a couple. It showcases a timeline, gallery, pet photos and interactive quiz using Tailwind CSS for styling.
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ npm run build
 ```
 src/
   components/     # Shared UI components (e.g. Navbar)
-  pages/          # React pages for timeline, gallery, map journey and quiz
+  pages/          # React pages for timeline, gallery, pet photos, map journey and quiz
   data/           # Static JSON used by the quiz
   index.css       # Tailwind CSS entry
   main.tsx        # App entry point that mounts React
