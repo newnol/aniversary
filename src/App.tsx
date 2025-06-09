@@ -6,6 +6,7 @@ import Timeline from './pages/Timeline';
 import Gallery from './pages/Gallery';
 import Journey from './pages/Journey';
 import Quiz from './pages/Quiz';
+import Pets from './pages/Pets';
 import { Analytics } from "@vercel/analytics/react";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/timeline" element={<Timeline />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/pets" element={<Pets />} />
             {/* <Route path="/messages" element={<Messages />} /> */}
             <Route path="/journey" element={<Journey />} />
             {/* <Route path="/bucket-list" element={<BucketList />} /> */}
